@@ -10,6 +10,7 @@ sudo apt-get -y install mysql-server-5.5
 yes | sudo apt-get install libpq-dev
 yes | sudo apt-get install nodejs nodejs-legacy npm
 yes | sudo apt-get install python2.6 python2.6-dev
+yes | sudo apt-get install python-django
 yes | sudo apt-get install python-pip build-essential 
 yes | sudo pip install --upgrade pip
 yes | sudo pip install django==1.6
