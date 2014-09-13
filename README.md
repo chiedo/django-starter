@@ -18,7 +18,7 @@ Local Development Environment
 
 > ####Existing database: django_app_default
 
-- To start your django project, run the following:
+- To start your django project, run the following inside your vagrant VM:
 ```
 django-admin startproject project_name
 ```
