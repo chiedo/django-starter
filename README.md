@@ -18,6 +18,11 @@ Local Development Environment
 
 > ####Existing database: django_app_default
 
+- To start your django project, run the following:
+```
+django-admin startproject project_name
+```
+
 ###Notes:
 >* If you have an issue with mysql not connecting, you may need to restart mysql by running 'sudo service mysql restart'
 >* Be sure to delete the .git folder after cloning this repo if you intend to use it for a completely unrelated project.
