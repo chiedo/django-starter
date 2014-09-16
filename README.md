@@ -26,3 +26,7 @@ django-admin startproject project_name
 ###Notes:
 >* If you have an issue with mysql not connecting, you may need to restart mysql by running 'sudo service mysql restart'
 >* Be sure to delete the .git folder after cloning this repo if you intend to use it for a completely unrelated project.
+>* Because of the nature of vagrant, you will need to run the Django server from your Vagrant VM on port 0.0.0.0 to be able to acces it from your local machine with the following script.
+```
+python manage.py runserver 0.0.0.0:8000
+```
