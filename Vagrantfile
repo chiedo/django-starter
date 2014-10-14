@@ -18,9 +18,11 @@ yes | sudo apt-get install python-django
 yes | sudo apt-get install python-pip build-essential 
 yes | sudo pip install --upgrade pip
 yes | sudo pip install django==1.6
+yes | pip install south
 yes | sudo apt-get install git
 yes | sudo apt-get install vim-nox
 yes | sudo apt-get install sqlite3 libsqlite3-dev
+sudo apt-get install -y python-mysqldb
 sudo update-rc.d mysql defaults
 
 # sets up mysql server
@@ -41,7 +43,7 @@ fi
 if [ ! -f /var/log/devenv ];
 then
   cd
-  #echo 'eIxport DJANGO_DEV_ENV="true"' | sudo tee -a /home/vagrant/.bashrc
+  echo 'export DJANGO_ENV="development"' | sudo tee -a /home/vagrant/.bashrc
   touch /var/log/devenv
 fi
 
