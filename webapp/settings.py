@@ -22,6 +22,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home',
+    'pipeline',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -37,6 +39,43 @@ ROOT_URLCONF = 'webapp.urls'
 
 WSGI_APPLICATION = 'webapp.wsgi.application'
 
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+
+PIPELINE_COMPILERS = (
+    'pipeline.compilers.sass.SASSCompiler',
+)
+
+PIPELINE_CSS = {
+    'styles': {
+        'source_filenames': (
+            'home/css/style.scss',
+        ),
+        'output_filename': 'css/style.css',
+    },
+}
+PIPELINE_JS = {
+    'global': {
+        'source_filenames': (
+            'home/js/global.js',
+        ),
+        'output_filename': 'js/global.js',
+    },
+}
+
+# Internationalization
+# https://docs.djangoproject.com/en/1.6/topics/i18n/
+
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'UTC'
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True
+
+# Environment Specific
 if os.environ['DJANGO_ENV'] == 'development':
     DATABASES = {
         'default': {
@@ -48,6 +87,15 @@ if os.environ['DJANGO_ENV'] == 'development':
             'PORT': 3306,
         }
     }
+    STATIC_URL = '/static/'
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATICFILES_DIRS = ()
+    STATICFILES_FINDERS = (
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    )
 elif os.environ['DJANGO_ENV'] == 'staging':
     DATABASES = {
         'default': {
@@ -70,22 +118,3 @@ elif os.environ['DJANGO_ENV'] == 'production':
             'PORT': os.environ['RDS_PORT'],
         }
     }
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.6/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
-STATIC_URL = '/static/'

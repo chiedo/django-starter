@@ -1,6 +1,6 @@
 Django-vagrant-starter
 =========
-A framework for a new Django 1.6/python 2.6 project utilizing vagrant for setting up the development environment.
+A framework for a new Django 1.7/python 2.7 project utilizing vagrant for setting up the development environment.
 
 Local Development Environment
 ----------
@@ -21,6 +21,8 @@ Local Development Environment
 - To start your django project, run the following inside your vagrant VM:
 ```
 sudo pip install -r requirements.txt
+python manage.py migrate
+python manage.py createadmin
 ```
 
 ###Notes:
