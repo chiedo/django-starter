@@ -12,9 +12,12 @@ import os
 import sys
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))  # This makes Django OK with apps being in the apps directory
-SECRET_KEY = 'ENTER'
-DEBUG = True
-TEMPLATE_DEBUG = True
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+
+if(os.environ['DJANGO_ENV'] == "development" or os.environ['DJANGO_ENV'] == "staging"):
+    DEBUG = True
+    TEMPLATE_DEBUG = True
+
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
@@ -77,46 +80,22 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Environment Specific
-if os.environ['DJANGO_ENV'] == 'development':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'django_app_default',
-            'USER': 'root',
-            'PASSWORD': 'root',
-            'HOST': '127.0.0.1',
-            'PORT': 3306,
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ['MYSQL_DATABASE'],
+        'USER': os.environ['MYSQL_USERNAME'],
+        'PASSWORD': os.environ['MYSQL_PASSWORD'],
+        'HOST': os.environ['MYSQL_HOSTNAME'],
+        'PORT': os.environ['MYSQL_PORT'],
     }
-    STATIC_URL = '/static/'
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-    STATICFILES_DIRS = ()
-    STATICFILES_FINDERS = (
-        'django.contrib.staticfiles.finders.FileSystemFinder',
-        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    )
-elif os.environ['DJANGO_ENV'] == 'staging':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'django_app_default',
-            'USER': 'ENTER',
-            'PASSWORD': 'ENTER',
-            'HOST': 'ENTER',
-            'PORT': 'ENTER',
-        }
-    }
-elif os.environ['DJANGO_ENV'] == 'production':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
-    }
+}
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = ()
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
