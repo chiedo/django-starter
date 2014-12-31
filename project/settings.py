@@ -14,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))  # This makes Django OK with apps being in the apps directory
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
-if(os.environ['DJANGO_ENV'] == "development" or os.environ['DJANGO_ENV'] == "staging"):
+if(os.environ['DJANGO_ENV'] != "production"):
     DEBUG = True
     TEMPLATE_DEBUG = True
 
