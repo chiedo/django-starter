@@ -23,7 +23,7 @@ Local Development Environment
 cd /vagrant (not cd vagrant)
 sudo pip install -r requirements.txt
 python manage.py migrate
-python manage.py createadmin
+python manage.py createsuperuser
 ```
 
 ###Notes:
