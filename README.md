@@ -20,6 +20,7 @@ Local Development Environment
 
 - To start your django project, run the following inside your vagrant VM:
 ```
+cd /vagrant (not cd vagrant)
 sudo pip install -r requirements.txt
 python manage.py migrate
 python manage.py createadmin
