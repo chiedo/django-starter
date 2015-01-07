@@ -12,6 +12,7 @@ sudo apt-get install -y tmux=1.9a-1~ppa1~t
 sudo apt-get -y install mysql-server-5.5
 sudo apt-get -y install libmysqlclient-dev
 sudo apt-get -y install unzip
+sudo apt-get -y remove git 
 yes | sudo apt-get install libpq-dev
 yes | sudo apt-get install nodejs nodejs-legacy npm
 yes | sudo apt-get install python2.7 python2.7-dev
