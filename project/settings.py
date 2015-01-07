@@ -12,13 +12,16 @@ import os
 import sys
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))  # This makes Django OK with apps being in the apps directory
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
-if(os.environ['DJANGO_ENV'] != "production"):
+if(os.environ["DJANGO_ENV"] != "production"):
     DEBUG = True
     TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 INSTALLED_APPS = (
     'django.contrib.admin',
