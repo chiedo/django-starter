@@ -4,7 +4,7 @@ A framework for a new Django 1.7/python 2.7 project utilizing vagrant for settin
 
 Local Development Environment
 ----------
-> Requirements: Vagrant and Virtual Box
+> Requirements: Vagrant, Virtual Box and an Amazon S3 account
 
 > It will be assumed that you are familiar with vagrant.
 
@@ -17,7 +17,7 @@ Local Development Environment
 > ####Mysql password: root
 
 > ####Existing database: django_app_default
-
+- Before anything, be sure to set up your AWS environment variables in ~/.basrc within vagrant. You must set up S3 or fakes3 before begginning.
 - To start your django project, run the following inside your vagrant VM:
 ```
 cd /vagrant (not cd vagrant)

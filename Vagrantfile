@@ -10,6 +10,7 @@ sudo add-apt-repository -y ppa:pi-rho/dev
 sudo apt-get update
 sudo apt-get install -y tmux=1.9a-1~ppa1~t
 sudo apt-get -y install mysql-server-5.5
+sudo apt-get -y install libmysqlclient-dev
 sudo apt-get -y install unzip
 yes | sudo apt-get install libpq-dev
 yes | sudo apt-get install nodejs nodejs-legacy npm
@@ -54,7 +55,6 @@ then
   echo 'export MYSQL_HOSTNAME="127.0.0.1"' | sudo tee -a /home/vagrant/.bashrc
   echo 'export MYSQL_PORT=3306' | sudo tee -a /home/vagrant/.bashrc
   # AWS
-  echo 'export USE_S3="False"' | sudo tee -a /home/vagrant/.bashrc
   echo 'export AWS_ACCESS_KEY_ID="NONE"' | sudo tee -a /home/vagrant/.bashrc
   echo 'export AWS_SECRET_ACCESS_KEY="NONE"' | sudo tee -a /home/vagrant/.bashrc
   echo 'export AWS_STORAGE_BUCKET_NAME="NONE"' | sudo tee -a /home/vagrant/.bashrc
