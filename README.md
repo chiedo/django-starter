@@ -30,6 +30,7 @@ python manage.py createsuperuser
 >* If you have an issue with mysql not connecting, you may need to restart mysql by running 'sudo service mysql restart'
 >* Be sure to delete the .git folder after cloning this repo if you intend to use it for a completely unrelated project.
 >* Because of the nature of vagrant, you will need to run the Django server from your Vagrant VM on port 0.0.0.0 to be able to acces it from your local machine with the following script.
+>* If you have issue connecting to mysql via port 5433, then go through an ssh tunnel using (ssh-username 'vagrant', ssh-password 'vagrant', port '2222' then the mysql credentials above except with the standard port of 3306)
 ```
 python manage.py runserver 0.0.0.0:8000
 ```
