@@ -59,6 +59,7 @@ then
   echo 'export AWS_ACCESS_KEY_ID="NONE"' | sudo tee -a /home/vagrant/.bashrc
   echo 'export AWS_SECRET_ACCESS_KEY="NONE"' | sudo tee -a /home/vagrant/.bashrc
   echo 'export AWS_STORAGE_BUCKET_NAME="NONE"' | sudo tee -a /home/vagrant/.bashrc
+  echo 'export AWS_S3_BUCKETLESS_DOMAIN="NONE"' | sudo tee -a /home/vagrant/.bashrc
   touch /var/log/devenv
 fi
 

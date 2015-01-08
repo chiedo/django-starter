@@ -89,21 +89,29 @@ DATABASES = {
         'PORT': os.environ['MYSQL_PORT'],
     }
 }
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
 
 # S3 configurations
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
 AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
 AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
+AWS_S3_BUCKETLESS_DOMAIN = os.environ["AWS_S3_BUCKETLESS_DOMAIN"]  # should be s3.amazonaws.com or different if fakes3
+AWS_S3_CUSTOM_DOMAIN = '%s.%s' % (AWS_STORAGE_BUCKET_NAME, AWS_S3_BUCKETLESS_DOMAIN)
+
+MEDIAFILES_LOCATION = "media"
+DEFAULT_FILE_STORAGE = "project.custom_storages.MediaStorage"
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+
+STATICFILES_LOCATION = "static"
+STATICFILES_STORAGE = "project.custom_storages.StaticStorage"
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
 # Local configurations
+# STATIC_URL = '/static/'
+# MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#STATICFILES_DIRS = ()
-#STATICFILES_FINDERS = (
-    #'django.contrib.staticfiles.finders.FileSystemFinder',
-    #'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#)
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = ()
+# STATICFILES_FINDERS = (
+#   'django.contrib.staticfiles.finders.FileSystemFinder',
+#   'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# )
