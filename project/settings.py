@@ -93,17 +93,15 @@ DATABASES = {
 # S3 configurations
 AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
 AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
-AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]  # should be actual bucket name or 'fakes3'
-AWS_S3_BUCKETLESS_DOMAIN = os.environ["AWS_S3_BUCKETLESS_DOMAIN"]  # should be 's3.amazonaws.com' or 'localhost'
-AWS_S3_CUSTOM_DOMAIN = '%s.%s' % (AWS_STORAGE_BUCKET_NAME, AWS_S3_BUCKETLESS_DOMAIN)
+AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
 
 MEDIAFILES_LOCATION = "media"
 DEFAULT_FILE_STORAGE = "project.custom_storages.MediaStorage"
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+MEDIA_URL = "https://%s.s3.amazonaws.com/%s/" % (AWS_STORAGE_BUCKET_NAME, MEDIAFILES_LOCATION)
 
 STATICFILES_LOCATION = "static"
 STATICFILES_STORAGE = "project.custom_storages.StaticStorage"
-STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+STATIC_URL = "https://%s.s3.amazonaws.com/%s/" % (AWS_STORAGE_BUCKET_NAME, STATICFILES_LOCATION)
 
 # Local configurations
 # STATIC_URL = '/static/'
