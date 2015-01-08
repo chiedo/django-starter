@@ -93,8 +93,8 @@ DATABASES = {
 # S3 configurations
 AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
 AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
-AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
-AWS_S3_BUCKETLESS_DOMAIN = os.environ["AWS_S3_BUCKETLESS_DOMAIN"]  # should be s3.amazonaws.com or different if fakes3
+AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]  # should be actual bucket name or 'fakes3'
+AWS_S3_BUCKETLESS_DOMAIN = os.environ["AWS_S3_BUCKETLESS_DOMAIN"]  # should be 's3.amazonaws.com' or 'localhost'
 AWS_S3_CUSTOM_DOMAIN = '%s.%s' % (AWS_STORAGE_BUCKET_NAME, AWS_S3_BUCKETLESS_DOMAIN)
 
 MEDIAFILES_LOCATION = "media"
