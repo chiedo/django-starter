@@ -21,7 +21,7 @@ sudo apt-get -y install python-django
 sudo apt-get -y install python-pip build-essential 
 sudo apt-get -y install python-mysqldb
 sudo pip install --upgrade pip
-sudo pip install django==1.7
+sudo pip install django==1.7.2
 sudo apt-get -y install git
 sudo gem install sass
 sudo apt-get -y install vim-nox

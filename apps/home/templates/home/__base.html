@@ -1,4 +1,4 @@
-{% load compressed %}
+{% load pipeline %}
 {% load staticfiles i18n %}
 <!DOCTYPE html>
 <!--[if IE 8]><html class="ie ie-8"><![endif]-->
@@ -16,7 +16,7 @@
 <title>
   {% block title %}{% trans "Django Vagrant Starter" %}{% endblock %}
 </title>
-{% compressed_css 'styles' %}
+{% stylesheet 'styles' %}
 {% block stylesheets %}{% endblock %}
 {% block extra_head %}{% endblock %}
 </head>
@@ -30,7 +30,7 @@
 </div>
 <!--[if gt IE 9]><!--><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><!--<![endif]-->
 <!--[if LTE IE  9]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><![endif]-->
-{% compressed_js 'global' %}
+{% javascript 'global' %}
 {% block javascript %}{% endblock %}
 </body>
 </html>
