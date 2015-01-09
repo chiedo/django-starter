@@ -13,19 +13,20 @@ sudo apt-get -y install mysql-server-5.5
 sudo apt-get -y install libmysqlclient-dev
 sudo apt-get -y install unzip
 sudo apt-get -y remove git 
-yes | sudo apt-get install libpq-dev
-yes | sudo apt-get install nodejs nodejs-legacy npm
-yes | sudo apt-get install python2.7 python2.7-dev
-yes | sudo apt-get install libjpeg-dev libfreetype6-dev zlib1g-dev
-yes | sudo apt-get install python-django
-yes | sudo apt-get install python-pip build-essential 
-yes | sudo pip install --upgrade pip
-yes | sudo pip install django==1.7
-yes | sudo apt-get install git
-yes | sudo gem install sass
-yes | sudo apt-get install vim-nox
-yes | sudo apt-get install sqlite3 libsqlite3-dev
-sudo apt-get install -y python-mysqldb
+sudo apt-get -y install libpq-dev
+sudo apt-get -y install nodejs nodejs-legacy npm
+sudo apt-get -y install python2.7 python2.7-dev
+sudo apt-get -y install libjpeg-dev libfreetype6-dev zlib1g-dev
+sudo apt-get -y install python-django
+sudo apt-get -y install python-pip build-essential 
+sudo apt-get -y install python-mysqldb
+sudo pip install --upgrade pip
+sudo pip install django==1.7
+sudo apt-get -y install git
+sudo gem install sass
+sudo apt-get -y install vim-nox
+sudo apt-get -y install sqlite3 libsqlite3-dev
+sudo npm install -g yuglify
 sudo update-rc.d mysql defaults
 
 # sets up mysql server

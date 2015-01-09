@@ -7,3 +7,4 @@ venv
 *.pyo
 node_modules
 static
+media

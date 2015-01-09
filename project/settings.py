@@ -90,7 +90,8 @@ DATABASES = {
     }
 }
 
-# S3 configurations
+# S3 configurations With pipeline cached storage for static files on development.
+# collectstatic should never be needed on the development server with this set up...
 AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
 AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
 AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
@@ -100,13 +101,25 @@ DEFAULT_FILE_STORAGE = "project.custom_storages.MediaStorage"
 MEDIA_URL = "https://%s.s3.amazonaws.com/%s/" % (AWS_STORAGE_BUCKET_NAME, MEDIAFILES_LOCATION)
 
 STATICFILES_LOCATION = "static"
-STATICFILES_STORAGE = "project.custom_storages.StaticStorage"
-STATIC_URL = "https://%s.s3.amazonaws.com/%s/" % (AWS_STORAGE_BUCKET_NAME, STATICFILES_LOCATION)
+if(os.environ["DJANGO_ENV"] == "development"):
+    STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+    STATIC_URL = "/static/"
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATICFILES_DIRS = ()
+    STATICFILES_FINDERS = (
+        'django.contrib.staticfiles.finders.FileSystemFinder',
+        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    )
+else:
+    STATICFILES_STORAGE = "project.custom_storages.StaticStorage"
+    STATIC_URL = "https://%s.s3.amazonaws.com/%s/" % (AWS_STORAGE_BUCKET_NAME, STATICFILES_LOCATION)
 
-# Local configurations
+
+# Purely Local configurations
 # STATIC_URL = '/static/'
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = ()
 # STATICFILES_FINDERS = (

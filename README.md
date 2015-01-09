@@ -17,7 +17,7 @@ Local Development Environment
 > ####Mysql password: root
 
 > ####Existing database: django_app_default
-- Before anything, be sure to set up your AWS environment variables in ~/.basrc within vagrant. You must set up S3 or fakes3 before begginning.
+- Before anything, be sure to set up your AWS environment variables in ~/.basrc within vagrant. You must set up S3 and all your environemnet variables in vagrant under ~/.bashrc before begginning.
 - To start your django project, run the following inside your vagrant VM:
 ```
 cd /vagrant (not cd vagrant)
