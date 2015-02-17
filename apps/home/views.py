@@ -1,3 +1,10 @@
+"""
+**************************
+Views
+**************************
+
+The views
+"""
 from django.shortcuts import render
 
 
