@@ -15,7 +15,7 @@ sudo apt-get -y install unzip
 sudo apt-get -y remove git 
 sudo apt-get -y install libpq-dev
 sudo apt-get -y install nodejs nodejs-legacy npm
-sudo apt-get -y install python2.7 python2.7-dev
+sudo apt-get -y install python2.7 python2.7-dev libxml2-dev libxslt1-dev libxslt-dev python-dev
 sudo apt-get -y install libjpeg-dev libfreetype6-dev zlib1g-dev
 sudo apt-get -y install python-django
 sudo apt-get -y install python-pip build-essential 
