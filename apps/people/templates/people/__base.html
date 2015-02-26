@@ -1,0 +1,36 @@
+{% load pipeline %}
+{% load staticfiles i18n %}
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie-8"><![endif]-->
+<!--[if IE 9]><html class="ie ie-9"><![endif]-->
+<!--[if gt IE 9]><!--><html><!--<![endif]-->
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta charset="UTF-8" />
+{% block meta_tags %}{% endblock %}
+<title>
+  {% block title %}{% trans "Django Vagrant Starter" %}{% endblock %}
+</title>
+{% stylesheet 'styles' %}
+{% block stylesheets %}{% endblock %}
+{% block extra_head %}{% endblock %}
+</head>
+<body>
+<header>
+  {% include "home/__navigation.html" %}
+</header>
+<div>
+  {% block content %}
+  {% endblock %}
+</div>
+<!--[if gt IE 9]><!--><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><!--<![endif]-->
+<!--[if LTE IE  9]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><![endif]-->
+{% javascript 'global' %}
+{% block javascript %}{% endblock %}
+</body>
+</html>
