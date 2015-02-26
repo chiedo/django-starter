@@ -45,6 +45,7 @@ Testing concept examples
 -- apps/people/tests/test_person_model.py
 - Views
 -- apps/people/tests/test_people_views.py
+-- app/people/tests/test_people_api.py
 - Misc classes
 -- apps/people/tests/test_example_class.py
 - Stubs (pretend)
