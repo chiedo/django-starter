@@ -25,6 +25,7 @@ INSTALLED_APPS = (
     'apps.people',
     'pipeline',
     'storages',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (

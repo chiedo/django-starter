@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'webapp.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^', include('apps.home.urls')),
-    url(r'^people/', include('apps.people.urls')),
+    url(r'^api/', include('apps.people.urls')),
     url(r'^admin/', include(admin.site.urls)),
     # May not be necessary for production environment?
     # Bridge will be crossed once we get there
