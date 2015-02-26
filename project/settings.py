@@ -26,7 +26,11 @@ INSTALLED_APPS = (
     'pipeline',
     'storages',
     'rest_framework',
+    'django_nose',
 )
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+NOSE_ARGS = ['--with-yanc']
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

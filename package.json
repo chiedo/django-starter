@@ -1,0 +1,22 @@
+{
+  "name": "django-vagrant-starter",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "~3.8.1",
+    "gulp-shell": "~0.2.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chiedojohn/django-vagrant-starter.git"
+  },
+  "author": "Chiedo John",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/chiedojohn/django-vagrant-starter/issues"
+  },
+  "homepage": "https://github.com/chiedojohn/django-vagrant-starter"
+}
