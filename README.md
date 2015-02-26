@@ -15,11 +15,6 @@ sudo pip install -r requirements.txt
 python manage.py migrate
 python manage.py createsuperuser
 ```
-- To get the necessary node packages installed, run
-```
-sudo npm install gulp -g
-npm install
-```
 
 ###Notes:
 Run the server within vagrant at /vagrant by running the following: 
@@ -32,8 +27,17 @@ Testing
 =====================
 The code should be commented pretty thouroughly. If anything is unclear, please let me know. These are not perfect tests nor are they exhaustive. You will want to write beter tests than these that covers more test cases. This is a great start though, and the other test cases should be trivial.
 
-To have gulp run tests any time a file change occurs, run 
+- You can have your tests auto run with gulp but first, get the necessary node packages installed:
+```
+sudo npm install gulp -g
+npm install
+```
+
+- Now run the following so that your tests will run everytime a file changes.
 ```gulp tests```
+
+- To run tests individually, you can just run the following
+```python manage.py test app_name```
 
 Testing concept examples
 -------------------
