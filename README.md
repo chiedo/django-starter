@@ -38,9 +38,9 @@ To have gulp run tests any time a file change occurs, run
 Testing concept examples
 -------------------
 - Models
--- apps/people/tests/test_models.py
+-- apps/people/tests/test_person_model.py
 - Views
--- apps/people/tests/test_views.py
+-- apps/people/tests/test_people_views.py
 - Misc classes
 -- apps/people/tests/test_example_class.py
 - Stubs (pretend)
