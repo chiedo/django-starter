@@ -1,5 +1,7 @@
 Django-vagrant-starter
 =========
+<img src="https://travis-ci.org/chiedojohn/django-vagrant-starter.svg?branch=master" />
+
 A framework for a new Django 1.7/python 2.7 project utilizing vagrant for setting up the development environment.
 
 READ THIS FIRST (DO NOT IGNORE): https://gist.github.com/chiedojohn/c3e37041b829f28c0c78

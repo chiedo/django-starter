@@ -6,9 +6,17 @@ import os
 import sys
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))  # This makes Django OK with apps being in the apps directory
-SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
+try:
+    environment = os.environ["DJANGO_ENV"]
+except KeyError:
+    environment = "development"
 
-if(os.environ["DJANGO_ENV"] != "production"):
+try:
+    SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
+except KeyError:
+    SECRET_KEY = ""
+
+if(environment != "production"):
     DEBUG = True
     TEMPLATE_DEBUG = True
 
@@ -79,29 +87,37 @@ USE_L10N = True
 
 USE_TZ = True
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ['MYSQL_DATABASE'],
-        'USER': os.environ['MYSQL_USERNAME'],
-        'PASSWORD': os.environ['MYSQL_PASSWORD'],
-        'HOST': os.environ['MYSQL_HOSTNAME'],
-        'PORT': os.environ['MYSQL_PORT'],
+try:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.environ['MYSQL_DATABASE'],
+            'USER': os.environ['MYSQL_USERNAME'],
+            'PASSWORD': os.environ['MYSQL_PASSWORD'],
+            'HOST': os.environ['MYSQL_HOSTNAME'],
+            'PORT': os.environ['MYSQL_PORT'],
+        }
     }
-}
+except:
+    DATABASES = {}
 
 # S3 configurations With pipeline cached storage for static files on development.
 # collectstatic should never be needed on the development server with this set up...
-AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
-AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
-AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
+try:
+    AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
+    AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
+    AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
+except KeyError:
+    AWS_ACCESS_KEY_ID = ""
+    AWS_SECRET_ACCESS_KEY = ""
+    AWS_STORAGE_BUCKET_NAME = ""
 
 MEDIAFILES_LOCATION = "media"
 DEFAULT_FILE_STORAGE = "project.custom_storages.MediaStorage"
 MEDIA_URL = "https://%s.s3.amazonaws.com/%s/" % (AWS_STORAGE_BUCKET_NAME, MEDIAFILES_LOCATION)
 
 STATICFILES_LOCATION = "static"
-if(os.environ["DJANGO_ENV"] == "development"):
+if(environment == "development"):
     STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
     STATIC_URL = "/static/"
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
