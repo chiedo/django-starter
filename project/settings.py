@@ -14,7 +14,7 @@ except KeyError:
 try:
     SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 except KeyError:
-    SECRET_KEY = ""
+    SECRET_KEY = "temporary"
 
 if(environment != "production"):
     DEBUG = True
