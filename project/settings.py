@@ -130,9 +130,13 @@ else:
     STATICFILES_STORAGE = "project.custom_storages.StaticStorage"
     STATIC_URL = "https://%s.s3.amazonaws.com/%s/" % (AWS_STORAGE_BUCKET_NAME, STATICFILES_LOCATION)
 
-# Make Django run tests in memory with sqlite
 if 'test' in sys.argv:
+    # Make Django run tests in memory with sqlite
     DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3'}
+    # Don't render any css
+    PIPELINE_CSS = {}
+    # Don't render any JS
+    PIPELINE_JS = {}
 
 # Purely Local configurations
 # STATIC_URL = '/static/'
