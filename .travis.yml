@@ -5,7 +5,7 @@ python:
 install: "pip install -r requirements.txt"
 # command to run tests
 before_script:
-  - python manage.py -y collectstatic
+  - python manage.py collectstatic --noinput
 script:
   - python manage.py test
 branches:
