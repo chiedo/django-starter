@@ -27,6 +27,10 @@ sudo gem install sass
 sudo apt-get -y install vim-nox
 sudo apt-get -y install sqlite3 libsqlite3-dev
 sudo npm install -g yuglify
+sudo npm install -g gulp
+cd /vagrant
+npm install
+
 sudo update-rc.d mysql defaults
 
 # sets up mysql server
@@ -54,15 +58,10 @@ then
   echo 'export DJANGO_SECRET_KEY="NONE"' | sudo tee -a /home/vagrant/.bashrc
   #MYSQL
   echo 'export MYSQL_DATABASE="app_development"' | sudo tee -a /home/vagrant/.bashrc
-  echo 'export MYSQL_USERNAME="root"' | sudo tee -a /home/vagrant/.bashrc
+  echo 'export MYSQL_USER="root"' | sudo tee -a /home/vagrant/.bashrc
   echo 'export MYSQL_PASSWORD="root"' | sudo tee -a /home/vagrant/.bashrc
   echo 'export MYSQL_HOSTNAME="127.0.0.1"' | sudo tee -a /home/vagrant/.bashrc
   echo 'export MYSQL_PORT=3306' | sudo tee -a /home/vagrant/.bashrc
-  # AWS
-  echo 'export AWS_ACCESS_KEY_ID="NONE"' | sudo tee -a /home/vagrant/.bashrc
-  echo 'export AWS_SECRET_ACCESS_KEY="NONE"' | sudo tee -a /home/vagrant/.bashrc
-  echo 'export AWS_STORAGE_BUCKET_NAME="NONE"' | sudo tee -a /home/vagrant/.bashrc
-  echo 'export AWS_S3_BUCKETLESS_DOMAIN="NONE"' | sudo tee -a /home/vagrant/.bashrc
   touch /var/log/devenv
 fi
 
