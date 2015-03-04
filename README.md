@@ -19,6 +19,8 @@ DJANGO_SECRET_KEY=None
 MYSQL_DATABASE=app_development
 MYSQL_USER=root
 MYSQL_PASSWORD=root
+# This needs to be set if you are using root as the username
+MYSQL_ROOT_PASSWORD=root
 # This is using the docker link
 MYSQL_HOSTNAME=db
 MYSQL_PORT=3306
