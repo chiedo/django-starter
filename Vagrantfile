@@ -30,6 +30,7 @@ sudo npm install -g yuglify
 sudo npm install -g gulp
 cd /vagrant
 npm install
+sudo pip install -r requirements.txt
 
 sudo update-rc.d mysql defaults
 
