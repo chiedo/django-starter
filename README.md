@@ -6,8 +6,10 @@ A framework for a new Django 1.7/python 2.7 project utilizing vagrant or docker 
 
 Notes: Docker is much faster and much more forgiving to changes although it has a slight learning curve. Do not have your vagrant vm and boot2docker running at the same time to prevent annoying issues. Vagrant at this point is a second class citizen and may not actively be maintained.
 
-Docker Notes
+Platform Specific Notes
 ====================
+Docker Notes
+--------------
 First read: https://gist.github.com/chiedojohn/e7ece910ef4a7e3ce125
 
 You will need to set up a file by the name of .env in the root of your project to store private environments that should not be committed to the git repository. It should have the following contents that you can customize if needed.
@@ -27,11 +29,11 @@ MYSQL_PORT=3306
 ```
 
 Vagrant Notes
-====================
+----------------
 First read: https://gist.github.com/chiedojohn/c3e37041b829f28c0c78
 
 Local Development Environment
-----------
+=================
 - To start your django project, run the following in your container or vm.
 ```
 python manage.py migrate
@@ -57,16 +59,16 @@ The code should be commented pretty thouroughly. If anything is unclear, please 
 Testing concept examples
 -------------------
 - Models
--- apps/people/tests/test_person_model.py
+  - apps/people/tests/test_person_model.py
 - Views
--- apps/home/tests/test_views.py
--- app/people/tests/test_people_api.py
+  - apps/home/tests/test_views.py
+  - app/people/tests/test_people_api.py
 - Misc classes
--- apps/people/tests/test_example_class.py
+  - apps/people/tests/test_example_class.py
 - Stubs (pretend)
--- apps/people/tests/test_example_class.py
+  - apps/people/tests/test_example_class.py
 - Mocks (mock)
--- apps/people/tests/test_example_class.py
+  - apps/people/tests/test_example_class.py
 
 Some Helpful External Docs for testing
 -----------
