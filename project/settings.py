@@ -93,7 +93,7 @@ try:
             'ENGINE': 'django.db.backends.mysql',
             'NAME': os.environ['MYSQL_DATABASE'],
             'USER': os.environ['MYSQL_USER'],
-            'PASSWORD': os.environ['MYSQL_PASSWORD'],
+            'PASSWORD': os.environ['MYSQL_PASS'],
             'HOST': os.environ['MYSQL_HOSTNAME'],
             'PORT': os.environ['MYSQL_PORT'],
         }
