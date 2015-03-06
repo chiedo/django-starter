@@ -2,7 +2,7 @@ Django-starter
 =========
 <img src="https://travis-ci.org/chiedojohn/django-starter.svg?branch=master" />
 
-A framework for a new Django 1.7/python 2.7 project utilizing vagrant or docker for setting up the development environment.
+A framework for a new Django 1.7/python 2.7 project utilizing vagrant or docker 1.5.0 for setting up the development environment.
 
 Platform Specific Notes
 ====================
