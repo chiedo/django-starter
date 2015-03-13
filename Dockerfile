@@ -19,4 +19,5 @@ RUN pip install -r requirements.txt
 #Install needed packages
 RUN gem install sass && \
   npm install gulp -g && \
+  npm install yuglify -g && \
   npm install

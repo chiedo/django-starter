@@ -30,7 +30,7 @@ First read: https://gist.github.com/chiedojohn/c3e37041b829f28c0c78
 
 Local Development Environment
 =================
-- To start your django project, run the following in your container or vm.
+- To start your django project, run the following in your container or vm after creating your database.
 ```
 python manage.py migrate
 python manage.py createsuperuser

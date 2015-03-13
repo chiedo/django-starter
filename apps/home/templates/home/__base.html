@@ -16,7 +16,7 @@
 <title>
   {% block title %}{% trans "Django Vagrant Starter" %}{% endblock %}
 </title>
-{% stylesheet 'styles' %}
+{% stylesheet 'application_css' %}
 {% block stylesheets %}{% endblock %}
 {% block extra_head %}{% endblock %}
 </head>
@@ -30,7 +30,7 @@
 </div>
 <!--[if gt IE 9]><!--><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><!--<![endif]-->
 <!--[if LTE IE  9]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><![endif]-->
-{% javascript 'global' %}
+{% javascript 'application_js' %}
 {% block javascript %}{% endblock %}
 </body>
 </html>

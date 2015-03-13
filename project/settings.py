@@ -57,20 +57,25 @@ PIPELINE_COMPILERS = (
     'pipeline.compilers.sass.SASSCompiler',
 )
 
+PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 PIPELINE_CSS = {
-    'styles': {
+    # Any css that should apply to all pages you should add to the source_filenames
+    'application_css': {
         'source_filenames': (
             'home/css/style.scss',
         ),
         'output_filename': 'css/style.css',
     },
 }
+
+PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 PIPELINE_JS = {
-    'global': {
+    # Any javascript that you want on all pages you should add to the source_filenames
+    'application_js': {
         'source_filenames': (
-            'home/js/global.js',
+            'home/js/application.js',
         ),
-        'output_filename': 'js/global.js',
+        'output_filename': 'js/application.js',
     },
 }
 
