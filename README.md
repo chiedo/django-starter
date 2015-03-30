@@ -78,4 +78,4 @@ Some Helpful External Docs for testing
 
 Reactjs
 ----------
-See basic reactjs integration apps/home/react
+See basic reactjs integration apps/home/react and apps/home/templates/home/index.html
