@@ -31,7 +31,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'apps.home',
     'apps.people',
-    'pipeline',
     'storages',
     'rest_framework',
     'django_nose',
@@ -52,32 +51,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'project.urls'
 
 WSGI_APPLICATION = 'project.wsgi.application'
-
-PIPELINE_COMPILERS = (
-    'pipeline.compilers.sass.SASSCompiler',
-)
-
-PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
-PIPELINE_CSS = {
-    # Any css that should apply to all pages you should add to the source_filenames
-    'application_css': {
-        'source_filenames': (
-            'home/css/style.scss',
-        ),
-        'output_filename': 'css/style.css',
-    },
-}
-
-PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
-PIPELINE_JS = {
-    # Any javascript that you want on all pages you should add to the source_filenames
-    'application_js': {
-        'source_filenames': (
-            'home/js/application.js',
-        ),
-        'output_filename': 'js/application.js',
-    },
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -123,7 +96,6 @@ MEDIA_URL = "https://%s.s3.amazonaws.com/%s/" % (AWS_STORAGE_BUCKET_NAME, MEDIAF
 
 STATICFILES_LOCATION = "static"
 if(environment == "development"):
-    STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
     STATIC_URL = "/static/"
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     STATICFILES_DIRS = ()
@@ -139,15 +111,11 @@ if 'test' in sys.argv:
     # Make Django run tests in memory with sqlite
     DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3'}
     # Don't render any css
-    PIPELINE_CSS = {}
-    # Don't render any JS
-    PIPELINE_JS = {}
 
 # Purely Local configurations
 # STATIC_URL = '/static/'
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = ()
 # STATICFILES_FINDERS = (
