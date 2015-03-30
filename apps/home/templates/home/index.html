@@ -1,4 +1,5 @@
 {% extends "home/__base.html" %}
+{% load staticfiles i18n %}
 {% block content %}
   Hello World
   Most of the content on this page can be ignored. This is only useful if you are looking at how integration with reactjs would work.
@@ -6,5 +7,5 @@
   <div id="react-bus"></div>
 {% endblock %}
 {% block javascript %}
-  <script src="{{ STATIC_URL }}home/js/react-bundle.js"></script>
+  <script src="{% static "home/js/react-bundle.js" %}"></script>
 {% endblock %}

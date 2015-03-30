@@ -15,7 +15,7 @@
 <title>
   {% block title %}{% trans "Django Vagrant Starter" %}{% endblock %}
 </title>
-<link href="{{ STATIC_URL }}home/css/style.css" rel="stylesheet" type="text/css">
+<link href="{% static "home/css/style.css" %}" rel="stylesheet" type="text/css">
 {% block stylesheets %}{% endblock %}
 {% block extra_head %}{% endblock %}
 </head>
@@ -29,7 +29,7 @@
 </div>
 <!--[if gt IE 9]><!--><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><!--<![endif]-->
 <!--[if LTE IE  9]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><![endif]-->
-<script src="{{ STATIC_URL }}home/js/application.js"></script>
+<script src="{% static "home/js/application.js" %}"></script>
 {% block javascript %}{% endblock %}
 </body>
 </html>
