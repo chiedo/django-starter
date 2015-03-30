@@ -71,3 +71,7 @@ Some Helpful External Docs for testing
 - Expects - https://github.com/jaimegildesagredo/expects
 - Nosetests - https://nose.readthedocs.org/en/latest/
 - Django-nose - https://github.com/django-nose/django-nose
+
+Reactjs
+----------
+See basic reactjs integration apps/home/react

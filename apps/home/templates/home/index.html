@@ -1,4 +1,9 @@
 {% extends "home/__base.html" %}
 {% block content %}
   Hello World
+  <div id="react-car"></div>
+  <div id="react-bus"></div>
+{% endblock %}
+{% block javascript %}
+  <script src="{{ STATIC_URL }}home/js/react-bundle.js"></script>
 {% endblock %}
