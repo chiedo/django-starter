@@ -42,7 +42,7 @@ Run the server by running the following:
 python manage.py runserver 0.0.0.0:8000
 ```
 
-Each app will have it's own gulpfile. If you are developing on an app, be sure to be running 'gulp watch' on your local machine at that apps root.
+Each app will have it's own gulpfile. If you are developing on an app, be sure to be running 'gulp watch' on your local machine at that apps root. You are also welcome to combine everything into one gulpfile and place it at the root of your project. That is your call though.
 
 Testing
 =====================
