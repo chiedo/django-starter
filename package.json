@@ -6,6 +6,11 @@
   "dependencies": {
   },
   "devDependencies": {
+    "envify": "~1.2.1",
+    "es6-promise": "~1.0.0",
+    "gulp-browserify": "~0.5.1",
+    "react": "~0.13.1",
+    "reactify": "~1.1.0",
     "del": "~0.1.1",
     "gulp": "~3.8.1",
     "gulp-concat": "~2.2.0",
