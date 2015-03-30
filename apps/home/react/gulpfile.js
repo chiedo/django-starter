@@ -1,3 +1,6 @@
+// This could be combined with the parent folders gulpfile if it is present.
+// Separate now for clarity purposes
+
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
 var uglify = require('gulp-uglify');

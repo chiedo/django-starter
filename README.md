@@ -42,6 +42,8 @@ Run the server by running the following:
 python manage.py runserver 0.0.0.0:8000
 ```
 
+Each app will have it's own gulpfile. If you are developing on an app, be sure to be running 'gulp watch' on your local machine at that apps root.
+
 Testing
 =====================
 The code should be commented pretty thouroughly. If anything is unclear, please let me know. These are not perfect tests nor are they exhaustive. You will want to write beter tests than these that covers more test cases. This is a great start though, and the other test cases should be trivial.
