@@ -34,7 +34,18 @@ INSTALLED_APPS = (
     'storages',
     'rest_framework',
     'django_nose',
+    'django_node',
+    'django_react',
 )
+
+DJANGO_NODE = {
+    'SERVICES': (
+        'django_react.services',
+    ),
+    'BaseService': (
+        'django_react.services',
+    ),
+}
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = ['--with-yanc', '-s']
