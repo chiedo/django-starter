@@ -7,6 +7,10 @@ WORKDIR /code
 ADD requirements.txt /code/
 ADD package.json /code/
 
+RUN apt-get install\
+  nodejs \
+  npm
+
+#Makes sure npm is the latest version. Ubuntu's version is not the latest
+RUN npm install -g npm
 RUN pip install -r requirements.txt
-RUN pip install -e git+https://github.com/markfinger/django-node.git#egg=django-node
-RUN pip install -e git+https://github.com/markfinger/django-react.git#egg=django-react

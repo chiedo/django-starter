@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 var React = require('react');
 
 var Bus = React.createClass({
@@ -6,7 +5,7 @@ var Bus = React.createClass({
   render: function() {
     return (
       <div className="bus">
-        Bus with no wheels.
+        {this.props.name} with no wheels.
       </div>
     );
   }

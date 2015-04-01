@@ -11,7 +11,7 @@ var minifyCSS = require('gulp-minify-css');
 
 var paths = {
   css: ['apps/home/static/home/css/**/*.scss', 'apps/people/static/people/css/**/*.scss'],
-  reactjs: ['apps/home/react/main.js'],
+  reactjs: ['apps/home/react/main.jsx'],
 };
 
 gulp.task('browserify', function() {
