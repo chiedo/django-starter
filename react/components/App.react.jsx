@@ -13,8 +13,8 @@ var App =
     render:function(){
       return (
           <Locations>
-            <Location path="/react-car" handler={Car} />
-            <Location path="/react-bus" handler={Bus} />
+            <Location path="/react-car/" handler={Car} />
+            <Location path="/react-bus/" handler={Bus} />
           </Locations>
         )
     }

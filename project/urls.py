@@ -18,5 +18,5 @@ urlpatterns = patterns('',
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {
         'document_root': settings.STATIC_ROOT}),
     # Pass anything else to the reactjs router. Must be last
-    url(r'^.*$', 'apps.home.views.index')
+    url(r'^.*/$', 'apps.home.views.index')
 )
