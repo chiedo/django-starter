@@ -11,7 +11,7 @@ var minifyCSS = require('gulp-minify-css');
 
 var paths = {
   css: ['apps/home/static/home/css/**/*.scss', 'apps/people/static/people/css/**/*.scss'],
-  reactjs: ['apps/home/react/main.jsx'],
+  reactjs: ['react/main.react.jsx'],
 };
 
 gulp.task('browserify', function() {
@@ -30,7 +30,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['apps/home/react/**/*.*'], ['browserify']);
+  gulp.watch(['react/**/*.*'], ['browserify']);
   gulp.watch(paths.css, ['sass']);
 });
 
