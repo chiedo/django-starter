@@ -6,6 +6,23 @@ A framework for a new Django 1.7/python 2.7 project utilizing vagrant or docker 
 
 Platform Specific Notes
 ====================
+Local Option
+--------------------
+- Make sure you have an environment variable set up on your host machine which sets DJANGO_ENV to development.
+- Create an .env file with the following contents (Update the port, username and password in accordance with your local database setup)
+
+```
+#DJANGO
+DJANGO_SECRET_KEY=None
+#MYSQL
+MYSQL_DATABASE=django_starter_development
+MYSQL_USER=root
+MYSQL_PASS=root
+MYSQL_HOSTNAME=127.0.0.1
+MYSQL_PORT=8889
+```
+- Set up virtualenv and do all python related tasks within your virtualenv.
+
 Docker Notes
 --------------
 First read: https://gist.github.com/chiedojohn/e7ece910ef4a7e3ce125

@@ -2,6 +2,10 @@
 import os
 import sys
 
+# This allows you to load environment variables from a .env file
+import dotenv
+dotenv.read_dotenv()
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
 
