@@ -1,5 +1,7 @@
 Django-starter
 =========
+Not actively maintained anymore. Will still use but will require updates, etc.
+
 <img src="https://travis-ci.org/chiedojohn/django-starter.svg?branch=master" />
 
 A framework for a new Django 1.7/python 2.7 project utilizing vagrant or docker 1.5.0 for setting up the development environment.
